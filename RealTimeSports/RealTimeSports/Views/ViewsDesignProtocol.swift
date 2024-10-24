@@ -13,6 +13,8 @@ protocol ViewDesignProtocol {
 
     func setConstraintsForViews()
 
+    func setAccessibilityIdentifiers()
+
 }
 
 protocol ViewControllerDesignProtocol {
@@ -23,6 +25,8 @@ protocol ViewControllerDesignProtocol {
 
     func setConstraintsForViews()
 
+    func setAccessibilityIdentifiers()
+
 }
 
 extension ViewControllerDesignProtocol {
@@ -31,6 +35,7 @@ extension ViewControllerDesignProtocol {
         createViews()
         styleViews()
         setConstraintsForViews()
+        setAccessibilityIdentifiers()
     }
 
 }

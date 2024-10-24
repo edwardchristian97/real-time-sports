@@ -8,5 +8,5 @@ target 'RealTimeSports' do
   # Pods for RealTimeSports
   pod 'Alamofire'
   pod 'PureLayout'
-  pod 'RxSwift'
+  pod 'lottie-ios'
 end

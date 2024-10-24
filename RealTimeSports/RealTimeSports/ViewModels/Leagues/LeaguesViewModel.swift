@@ -18,7 +18,7 @@ class LeaguesViewModel {
         self.leaguesService = leaguesService
     }
 
-    func fetchAllLeagues(completion: @escaping (Result<[League], AFError>) -> Void) {
+    func fetchAllLeagues(completion: @escaping (Result<[League], LeagueError>) -> Void) {
         var leaguesWithImage = [League]()
 
         leaguesService.allLeagues { result in
@@ -34,7 +34,7 @@ class LeaguesViewModel {
                         case .success(let league):
                             guard let imageURL = league.strBadge else {
                                 self.dispatchGroup.leave()
-                                return completion(.failure(.explicitlyCancelled))
+                                return completion(.failure(.commonError(.unexpectedError)))
                             }
 
                             self.leaguesService.downloadImage(url: URL(string: imageURL)!) { result in
@@ -51,13 +51,13 @@ class LeaguesViewModel {
                                     self.dispatchGroup.leave()
 
                                 case .failure(let error):
-                                    print(error)
+                                    completion(.failure(error))
                                     self.dispatchGroup.leave()
                                 }
                             }
 
                         case .failure(let error):
-                            print(error)
+                            completion(.failure(error))
                         }
                     }
                 }
@@ -67,7 +67,7 @@ class LeaguesViewModel {
                 }
 
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
         }
     }

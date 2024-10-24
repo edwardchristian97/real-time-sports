@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-user-profile-computer-icons-5ae0a15e32eb74.6588024115246708142086-2.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "kisspng-user-profile-computer-icons-5ae0a15e32eb74.6588024115246708142086.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

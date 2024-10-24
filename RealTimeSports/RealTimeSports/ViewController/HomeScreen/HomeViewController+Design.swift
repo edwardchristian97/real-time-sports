@@ -13,15 +13,34 @@ extension HomeViewController: ViewControllerDesignProtocol {
 
         let searchBarButtonItem = UIBarButtonItem(customView: searchButton)
         navigationItem.rightBarButtonItem = searchBarButtonItem
+
+        liveEventsTableView = UITableView()
+        view.addSubview(liveEventsTableView)
+
+        errorView = ErrorView()
+        view.addSubview(errorView)
     }
 
     func styleViews() {
         setupNavigationBarAppearance()
         setupSearchButton()
+
+        liveEventsTableView.separatorStyle = .none
+        liveEventsTableView.rowHeight = 180
+
+        errorView.backgroundColor = .systemBackground
+        errorView.isHidden = true
     }
 
     func setConstraintsForViews() {
         searchButton.autoSetDimensions(to: CGSize(width: 42, height: 42))
+        liveEventsTableView.autoPinEdgesToSuperviewEdges()
+        errorView.autoPinEdgesToSuperviewEdges()
+    }
+
+    func setAccessibilityIdentifiers() {
+        searchButton.isAccessibilityElement = true
+        searchButton.accessibilityHint = "Search button for players"
     }
 
     private func setupNavigationBarAppearance() {

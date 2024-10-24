@@ -17,4 +17,16 @@ class ViewModelFactory {
         LeagueStandingsViewModel(leaguesService: service.leagueService)
     }
 
+    static func makePlayerViewModel() -> PlayerViewModel {
+        PlayerViewModel(playerService: service.playerService)
+    }
+
+    static func makeSearchViewModel() -> SearchViewModel {
+        SearchViewModel(playerService: service.playerService, teamService: service.teamService)
+    }
+
+    static func makeLiveEventViewModel() -> LiveEventViewModel {
+        LiveEventViewModel(liveEventService: service.liveEventService)
+    }
+
 }

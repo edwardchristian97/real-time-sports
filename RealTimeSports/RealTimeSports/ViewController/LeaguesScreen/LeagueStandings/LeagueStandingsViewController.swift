@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class LeagueStandingsViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class LeagueStandingsViewController: UIViewController {
 
     var errorView: ErrorView!
     var leagueStandingsTableView: UITableView!
+    var loadingAnimation: LottieAnimationView!
 
     init(leagueId: String) {
         self.leagueId = leagueId
@@ -34,7 +36,13 @@ class LeagueStandingsViewController: UIViewController {
     }
 
     private func fetchLeagueStandings() {
+        loadingAnimation.isHidden = false
+        loadingAnimation.play()
+
         viewModel.fetchLeagueStandings(id: leagueId) { result in
+            self.loadingAnimation.isHidden = true
+            self.loadingAnimation.stop()
+
             DispatchQueue.main.async {
                 switch result {
                 case .success(let standings):
@@ -65,8 +73,11 @@ extension LeagueStandingsViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TeamRankTableViewCell.cellIdentifier, for: indexPath) as! TeamRankTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: TeamRankTableViewCell.cellIdentifier,
+            for: indexPath) as! TeamRankTableViewCell
         cell.setTeam(leagueStandings[indexPath.row])
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -77,6 +88,8 @@ extension LeagueStandingsViewController: UITableViewDelegate, UITableViewDataSou
     }
 
     private func updateTableView() {
+        guard leagueStandings.count > 0 else { return }
+        
         leagueStandingsTableView.performBatchUpdates({
             let indexPathsToInsert = (0..<leagueStandings.count).map { IndexPath(row: $0, section: 0) }
             leagueStandingsTableView.insertRows(at: indexPathsToInsert, with: .fade)

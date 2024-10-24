@@ -11,16 +11,14 @@ class LeagueService: LeagueServiceProtocol {
     private let urlBuilder: URLBuilder
     private let urlBuilderV2: CommonURLBuilder
     private let httpClient: HTTPClient
-    private let dispatchGroup: DispatchGroup
 
     init(urlBuilder: URLBuilder, urlBuilderV2: CommonURLBuilder, httpClient: HTTPClient) {
         self.urlBuilder = urlBuilder
         self.urlBuilderV2 = urlBuilderV2
         self.httpClient = httpClient
-        self.dispatchGroup = DispatchGroup()
     }
 
-    func league(id: String, completion: @escaping (Result<LeagueResponse, AFError>) -> Void) {
+    func league(id: String, completion: @escaping (Result<LeagueResponse, LeagueError>) -> Void) {
         var request = URLRequest(
             url: urlBuilderV2
                 .lookupURL
@@ -39,19 +37,19 @@ class LeagueService: LeagueServiceProtocol {
                         let response = try JSONDecoder().decode(LookupLeagueResponse.self, from: data)
                         completion(.success(response.lookup[0]))
                     } catch {
-                        completion(.failure(.explicitlyCancelled))
+                        completion(.failure(.commonError(.unexpectedError)))
                     }
                 } else {
-                    completion(.failure(.explicitlyCancelled))
+                    completion(.failure(.commonError(.unexpectedError)))
                 }
 
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure(_):
+                completion(.failure(.commonError(.unexpectedError)))
             }
         }
     }
 
-    func allLeagues(completion: @escaping (Result<[LeagueResponse], AFError>) -> Void) {
+    func allLeagues(completion: @escaping (Result<[LeagueResponse], LeagueError>) -> Void) {
         var request = URLRequest(url: urlBuilderV2.allURL.appendingPathComponent(urlBuilderV2.leaguesKey))
 
         request.httpMethod = HTTPMethodType.get.rawValue
@@ -67,14 +65,14 @@ class LeagueService: LeagueServiceProtocol {
                         let filteredResponse = Array(response.all.prefix(15))
                         completion(.success(filteredResponse))
                     } catch {
-                        completion(.failure(.explicitlyCancelled))
+                        completion(.failure(.commonError(.unexpectedError)))
                     }
                 } else {
-                    completion(.failure(.explicitlyCancelled))
+                    completion(.failure(.commonError(.unexpectedError)))
                 }
 
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure(_):
+                completion(.failure(.commonError(.unexpectedError)))
             }
         }
 
@@ -105,7 +103,7 @@ class LeagueService: LeagueServiceProtocol {
         }
     }
 
-    func downloadImage(url: URL, completion: @escaping (Result<Data, AFError>) -> Void) {
+    func downloadImage(url: URL, completion: @escaping (Result<Data, LeagueError>) -> Void) {
         httpClient.getRequest(url: URLRequest(url: url)) { result in
             switch result {
                 
@@ -113,11 +111,11 @@ class LeagueService: LeagueServiceProtocol {
                 if let data {
                     completion(.success(data))
                 } else {
-                    completion(.failure(.explicitlyCancelled))
+                    completion(.failure(.commonError(.unexpectedError)))
                 }
 
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure(_):
+                completion(.failure(.commonError(.unexpectedError)))
             }
         }
     }

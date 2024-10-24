@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (5.9.1)
+  - lottie-ios (4.4.3)
   - PureLayout (3.1.9)
-  - RxSwift (6.7.1)
 
 DEPENDENCIES:
   - Alamofire
+  - lottie-ios
   - PureLayout
-  - RxSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - lottie-ios
     - PureLayout
-    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
   PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
-  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
 
-PODFILE CHECKSUM: fe3294e333361c1a732ff0ccbb9b5a68919f88a8
+PODFILE CHECKSUM: 096bea6a48c9f3b990f258818ec52bcbdb708871
 
 COCOAPODS: 1.15.2

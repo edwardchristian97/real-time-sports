@@ -52,6 +52,23 @@
         }
       }
     },
+    "liveTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIVE"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IN DIRECT"
+          }
+        }
+      }
+    },
     "noAvailableStandings" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -86,6 +103,40 @@
         }
       }
     },
+    "noLiveEvents" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There are no live events"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu exista meciuri disponibile"
+          }
+        }
+      }
+    },
+    "noResultsFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results found"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu s-a gasit niciun rezultat"
+          }
+        }
+      }
+    },
     "playersTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -110,6 +161,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "#"
+          }
+        }
+      }
+    },
+    "searchPlaceholderTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search…"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cauta..."
           }
         }
       }

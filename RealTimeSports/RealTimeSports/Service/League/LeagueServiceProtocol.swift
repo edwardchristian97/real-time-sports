@@ -9,9 +9,9 @@ import Alamofire
 
 protocol LeagueServiceProtocol {
 
-    func league(id: String, completion: @escaping (Result<LeagueResponse, AFError>) -> Void)
-    func allLeagues(completion: @escaping (Result<[LeagueResponse], AFError>) -> Void)
+    func league(id: String, completion: @escaping (Result<LeagueResponse, LeagueError>) -> Void)
+    func allLeagues(completion: @escaping (Result<[LeagueResponse], LeagueError>) -> Void)
     func leagueStandings(id: String, completion: @escaping (Result<[TeamResponse], LeagueError>) -> Void)
-    func downloadImage(url: URL, completion: @escaping (Result<Data, AFError>) -> Void)
+    func downloadImage(url: URL, completion: @escaping (Result<Data, LeagueError>) -> Void)
 
 }

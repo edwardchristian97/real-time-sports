@@ -46,5 +46,13 @@ extension ErrorView: ViewDesignProtocol {
         descriptionLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 16)
         descriptionLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
     }
-    
+
+    func setAccessibilityIdentifiers() {
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityHint = "Error icon"
+        
+        descriptionLabel.isAccessibilityElement = true
+        descriptionLabel.accessibilityHint = "Error message"
+    }
+
 }

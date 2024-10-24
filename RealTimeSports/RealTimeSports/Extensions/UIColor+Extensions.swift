@@ -20,6 +20,10 @@ extension UIColor {
         dynamicColor(lightModeColor: .appGreen, darkModeColor: .appDarkGreen)
     }
 
+    static var invertedDynamicAppGreen: UIColor {
+        dynamicColor(lightModeColor: .appDarkGreen, darkModeColor: .appGreen)
+    }
+
     static var invertedSystemBackground: UIColor {
         dynamicColor(lightModeColor: .black, darkModeColor: .white)
     }

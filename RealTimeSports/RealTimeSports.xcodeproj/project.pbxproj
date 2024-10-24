@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5F762564FA7F75559B596F8C /* Pods_RealTimeSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB44F3BD28C411A1315E6279 /* Pods_RealTimeSports.framework */; };
+		814827BF2CCAC5E0007C5C91 /* SearchViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827BE2CCAC5DB007C5C91 /* SearchViewController+Keyboard.swift */; };
+		814827C12CCACB6B007C5C91 /* LiveEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827C02CCACB69007C5C91 /* LiveEvent.swift */; };
+		814827C42CCACB83007C5C91 /* LiveEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827C32CCACB80007C5C91 /* LiveEventResponse.swift */; };
+		814827C72CCACC2D007C5C91 /* LiveEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827C62CCACC26007C5C91 /* LiveEventService.swift */; };
+		814827C92CCACC33007C5C91 /* LiveEventServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827C82CCACC30007C5C91 /* LiveEventServiceProtocol.swift */; };
+		814827CB2CCACC89007C5C91 /* LiveEventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827CA2CCACC85007C5C91 /* LiveEventError.swift */; };
+		814827CE2CCACEF2007C5C91 /* LiveEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827CD2CCACEF0007C5C91 /* LiveEventViewModel.swift */; };
+		814827D12CCAD072007C5C91 /* LiveEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827D02CCAD06D007C5C91 /* LiveEventTableViewCell.swift */; };
+		814827D32CCAD07A007C5C91 /* LiveEventTableViewCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814827D22CCAD075007C5C91 /* LiveEventTableViewCell+Design.swift */; };
+		81538C472CCAEA6C0054F59D /* loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 81538C462CCAEA6C0054F59D /* loading-animation.json */; };
+		81538C4A2CCAEB290054F59D /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538C492CCAEB260054F59D /* PlayerViewController.swift */; };
+		81538C4C2CCAEB2F0054F59D /* PlayerViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538C4B2CCAEB2C0054F59D /* PlayerViewController+Design.swift */; };
+		81538C4E2CCAF95C0054F59D /* ErrorView+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538C4D2CCAF9570054F59D /* ErrorView+Accessibility.swift */; };
 		81557C8D2CC915400099B41F /* ViewsDesignProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557C8C2CC9152B0099B41F /* ViewsDesignProtocol.swift */; };
 		81557C902CC915BA0099B41F /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557C8F2CC915B40099B41F /* HomeViewController+Design.swift */; };
 		81557C932CC919B40099B41F /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557C922CC919AD0099B41F /* RootTabBarViewController.swift */; };
@@ -46,6 +59,13 @@
 		81557CF72CCA720F0099B41F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557CF62CCA720C0099B41F /* SearchViewController.swift */; };
 		81557CF92CCA789B0099B41F /* SearchViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557CF82CCA78960099B41F /* SearchViewController+Design.swift */; };
 		81557CFC2CCA79DD0099B41F /* SearchScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557CFB2CCA79D10099B41F /* SearchScope.swift */; };
+		81557D002CCA91D50099B41F /* PlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557CFF2CCA91D30099B41F /* PlayerResponse.swift */; };
+		81557D022CCA91D90099B41F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D012CCA91D80099B41F /* Player.swift */; };
+		81557D052CCA92D20099B41F /* PlayerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D042CCA92CE0099B41F /* PlayerServiceProtocol.swift */; };
+		81557D072CCA92D80099B41F /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D062CCA92D50099B41F /* PlayerService.swift */; };
+		81557D0A2CCA9BF30099B41F /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D092CCA9BE90099B41F /* PlayerViewModel.swift */; };
+		81557D0D2CCA9E3C0099B41F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D0C2CCA9E3A0099B41F /* SearchViewModel.swift */; };
+		81557D0F2CCAAE4C0099B41F /* PlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81557D0E2CCAAE490099B41F /* PlayerError.swift */; };
 		8189CDFF2CC8E79E00B1BA83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189CDF52CC8E79E00B1BA83 /* AppDelegate.swift */; };
 		8189CE002CC8E79E00B1BA83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189CDFC2CC8E79E00B1BA83 /* SceneDelegate.swift */; };
 		8189CE012CC8E79E00B1BA83 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8189CDFD2CC8E79E00B1BA83 /* HomeViewController.swift */; };
@@ -59,6 +79,19 @@
 /* Begin PBXFileReference section */
 		49A8142E1D614838A8E42BC6 /* Pods-RealTimeSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealTimeSports.release.xcconfig"; path = "Target Support Files/Pods-RealTimeSports/Pods-RealTimeSports.release.xcconfig"; sourceTree = "<group>"; };
 		5AF7A1E900DA7024E1C1F570 /* Pods-RealTimeSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealTimeSports.debug.xcconfig"; path = "Target Support Files/Pods-RealTimeSports/Pods-RealTimeSports.debug.xcconfig"; sourceTree = "<group>"; };
+		814827BE2CCAC5DB007C5C91 /* SearchViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		814827C02CCACB69007C5C91 /* LiveEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEvent.swift; sourceTree = "<group>"; };
+		814827C32CCACB80007C5C91 /* LiveEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventResponse.swift; sourceTree = "<group>"; };
+		814827C62CCACC26007C5C91 /* LiveEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventService.swift; sourceTree = "<group>"; };
+		814827C82CCACC30007C5C91 /* LiveEventServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventServiceProtocol.swift; sourceTree = "<group>"; };
+		814827CA2CCACC85007C5C91 /* LiveEventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventError.swift; sourceTree = "<group>"; };
+		814827CD2CCACEF0007C5C91 /* LiveEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventViewModel.swift; sourceTree = "<group>"; };
+		814827D02CCAD06D007C5C91 /* LiveEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventTableViewCell.swift; sourceTree = "<group>"; };
+		814827D22CCAD075007C5C91 /* LiveEventTableViewCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LiveEventTableViewCell+Design.swift"; sourceTree = "<group>"; };
+		81538C462CCAEA6C0054F59D /* loading-animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "loading-animation.json"; sourceTree = "<group>"; };
+		81538C492CCAEB260054F59D /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		81538C4B2CCAEB2C0054F59D /* PlayerViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+Design.swift"; sourceTree = "<group>"; };
+		81538C4D2CCAF9570054F59D /* ErrorView+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorView+Accessibility.swift"; sourceTree = "<group>"; };
 		81557C8C2CC9152B0099B41F /* ViewsDesignProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsDesignProtocol.swift; sourceTree = "<group>"; };
 		81557C8F2CC915B40099B41F /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
 		81557C922CC919AD0099B41F /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +130,13 @@
 		81557CF62CCA720C0099B41F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		81557CF82CCA78960099B41F /* SearchViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Design.swift"; sourceTree = "<group>"; };
 		81557CFB2CCA79D10099B41F /* SearchScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScope.swift; sourceTree = "<group>"; };
+		81557CFF2CCA91D30099B41F /* PlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResponse.swift; sourceTree = "<group>"; };
+		81557D012CCA91D80099B41F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		81557D042CCA92CE0099B41F /* PlayerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerServiceProtocol.swift; sourceTree = "<group>"; };
+		81557D062CCA92D50099B41F /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		81557D092CCA9BE90099B41F /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		81557D0C2CCA9E3A0099B41F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		81557D0E2CCAAE490099B41F /* PlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerError.swift; sourceTree = "<group>"; };
 		8169E4E72CC8E43600F25744 /* RealTimeSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTimeSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8189CDF52CC8E79E00B1BA83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8189CDF62CC8E79E00B1BA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,9 +162,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814827C22CCACB71007C5C91 /* LiveEvent */ = {
+			isa = PBXGroup;
+			children = (
+				814827C32CCACB80007C5C91 /* LiveEventResponse.swift */,
+				814827C02CCACB69007C5C91 /* LiveEvent.swift */,
+			);
+			path = LiveEvent;
+			sourceTree = "<group>";
+		};
+		814827C52CCACC19007C5C91 /* LiveEvent */ = {
+			isa = PBXGroup;
+			children = (
+				814827C82CCACC30007C5C91 /* LiveEventServiceProtocol.swift */,
+				814827C62CCACC26007C5C91 /* LiveEventService.swift */,
+			);
+			path = LiveEvent;
+			sourceTree = "<group>";
+		};
+		814827CC2CCACEE3007C5C91 /* LiveEventViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				814827CD2CCACEF0007C5C91 /* LiveEventViewModel.swift */,
+			);
+			path = LiveEventViewModel;
+			sourceTree = "<group>";
+		};
+		814827CF2CCAD064007C5C91 /* LiveEventTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				814827D22CCAD075007C5C91 /* LiveEventTableViewCell+Design.swift */,
+				814827D02CCAD06D007C5C91 /* LiveEventTableViewCell.swift */,
+			);
+			path = LiveEventTableViewCell;
+			sourceTree = "<group>";
+		};
+		81538C412CCAE7180054F59D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				81538C462CCAEA6C0054F59D /* loading-animation.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		81538C482CCAEB210054F59D /* PlayerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				81538C4B2CCAEB2C0054F59D /* PlayerViewController+Design.swift */,
+				81538C492CCAEB260054F59D /* PlayerViewController.swift */,
+			);
+			path = PlayerScreen;
+			sourceTree = "<group>";
+		};
 		81557C8B2CC915270099B41F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				814827CF2CCAD064007C5C91 /* LiveEventTableViewCell */,
 				81557CF02CCA61BC0099B41F /* TeamRankHeaderView */,
 				81557CEF2CCA51A60099B41F /* ErrorView */,
 				81557CE12CCA3C3C0099B41F /* TeamRankTableViewCell */,
@@ -181,11 +274,13 @@
 		81557CA32CC93A0B0099B41F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				814827C52CCACC19007C5C91 /* LiveEvent */,
 				81557CBC2CC954960099B41F /* CommonURLBuilder.swift */,
 				81557CA42CC93A140099B41F /* Service.swift */,
 				81557CA12CC939860099B41F /* URLBuilder.swift */,
 				81557CAB2CC93C970099B41F /* URLBuilderV2.swift */,
 				81557CBE2CC955A40099B41F /* League */,
+				81557D032CCA92C70099B41F /* Player */,
 				81557CC12CC956030099B41F /* Team */,
 			);
 			path = Service;
@@ -194,6 +289,8 @@
 		81557CB42CC949770099B41F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				814827C22CCACB71007C5C91 /* LiveEvent */,
+				81557CFE2CCA91CE0099B41F /* Player */,
 				81557CFA2CCA79CC0099B41F /* Search */,
 				81557CDA2CCA2A410099B41F /* Team */,
 				81557CCA2CC97FC30099B41F /* League */,
@@ -222,6 +319,9 @@
 		81557CC42CC95E370099B41F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				814827CC2CCACEE3007C5C91 /* LiveEventViewModel */,
+				81557D0B2CCA9E300099B41F /* Search */,
+				81557D082CCA9BE10099B41F /* Player */,
 				81557CD12CC995CE0099B41F /* ViewModelFactory.swift */,
 				81557CC72CC95F010099B41F /* Leagues */,
 			);
@@ -277,6 +377,8 @@
 		81557CE62CCA4B710099B41F /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				814827CA2CCACC85007C5C91 /* LiveEventError.swift */,
+				81557D0E2CCAAE490099B41F /* PlayerError.swift */,
 				81557CE92CCA4CF50099B41F /* CommonError.swift */,
 				81557CE72CCA4B770099B41F /* LeagueError.swift */,
 			);
@@ -286,6 +388,7 @@
 		81557CEF2CCA51A60099B41F /* ErrorView */ = {
 			isa = PBXGroup;
 			children = (
+				81538C4D2CCAF9570054F59D /* ErrorView+Accessibility.swift */,
 				81557CED2CCA519E0099B41F /* ErrorView+Design.swift */,
 				81557CEB2CCA514C0099B41F /* ErrorView.swift */,
 			);
@@ -304,6 +407,7 @@
 		81557CF52CCA72060099B41F /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
+				814827BE2CCAC5DB007C5C91 /* SearchViewController+Keyboard.swift */,
 				81557CF82CCA78960099B41F /* SearchViewController+Design.swift */,
 				81557CF62CCA720C0099B41F /* SearchViewController.swift */,
 			);
@@ -314,6 +418,40 @@
 			isa = PBXGroup;
 			children = (
 				81557CFB2CCA79D10099B41F /* SearchScope.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		81557CFE2CCA91CE0099B41F /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				81557D012CCA91D80099B41F /* Player.swift */,
+				81557CFF2CCA91D30099B41F /* PlayerResponse.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		81557D032CCA92C70099B41F /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				81557D062CCA92D50099B41F /* PlayerService.swift */,
+				81557D042CCA92CE0099B41F /* PlayerServiceProtocol.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		81557D082CCA9BE10099B41F /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				81557D092CCA9BE90099B41F /* PlayerViewModel.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		81557D0B2CCA9E300099B41F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				81557D0C2CCA9E3A0099B41F /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -339,6 +477,7 @@
 		8189CDFE2CC8E79E00B1BA83 /* RealTimeSports */ = {
 			isa = PBXGroup;
 			children = (
+				81538C412CCAE7180054F59D /* Animation */,
 				8189CDF72CC8E79E00B1BA83 /* Info.plist */,
 				8189CDF52CC8E79E00B1BA83 /* AppDelegate.swift */,
 				8189CDFC2CC8E79E00B1BA83 /* SceneDelegate.swift */,
@@ -370,6 +509,7 @@
 		81A705472CC905FC008FD00F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				81538C482CCAEB210054F59D /* PlayerScreen */,
 				81557CF52CCA72060099B41F /* SearchScreen */,
 				81557C962CC91CB90099B41F /* LeaguesScreen */,
 				81557C912CC9199C0099B41F /* RootTabBar */,
@@ -462,6 +602,7 @@
 				8189CE022CC8E79E00B1BA83 /* Assets.xcassets in Resources */,
 				8189CE042CC8E79E00B1BA83 /* LaunchScreen.storyboard in Resources */,
 				81557C9E2CC931CA0099B41F /* Localizable.xcstrings in Resources */,
+				81538C472CCAEA6C0054F59D /* loading-animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +657,7 @@
 			files = (
 				81557CD02CC9943D0099B41F /* LeagueServiceProtocol.swift in Sources */,
 				81557CE02CCA3A300099B41F /* LeagueStandingsViewModel.swift in Sources */,
+				814827D32CCAD07A007C5C91 /* LiveEventTableViewCell+Design.swift in Sources */,
 				81A705422CC8FBAB008FD00F /* HTTPMethodType.swift in Sources */,
 				81557C902CC915BA0099B41F /* HomeViewController+Design.swift in Sources */,
 				81557CDC2CCA2A490099B41F /* TeamResponse.swift in Sources */,
@@ -523,39 +665,57 @@
 				81557CCE2CC993BB0099B41F /* TeamServiceProtocol.swift in Sources */,
 				81557CEE2CCA51A30099B41F /* ErrorView+Design.swift in Sources */,
 				81557CA52CC93A4D0099B41F /* Service.swift in Sources */,
+				81538C4E2CCAF95C0054F59D /* ErrorView+Accessibility.swift in Sources */,
+				81557D0A2CCA9BF30099B41F /* PlayerViewModel.swift in Sources */,
 				81557CBD2CC954A50099B41F /* CommonURLBuilder.swift in Sources */,
 				81557CF22CCA61C90099B41F /* TeamRankHeaderView.swift in Sources */,
+				814827C92CCACC33007C5C91 /* LiveEventServiceProtocol.swift in Sources */,
+				814827C12CCACB6B007C5C91 /* LiveEvent.swift in Sources */,
+				81557D072CCA92D80099B41F /* PlayerService.swift in Sources */,
 				81557CFC2CCA79DD0099B41F /* SearchScope.swift in Sources */,
 				81A705402CC8FB9F008FD00F /* HTTPClientProtocol.swift in Sources */,
 				81557C8D2CC915400099B41F /* ViewsDesignProtocol.swift in Sources */,
 				81557CD22CC995D10099B41F /* ViewModelFactory.swift in Sources */,
+				814827CE2CCACEF2007C5C91 /* LiveEventViewModel.swift in Sources */,
 				81557C952CC91BD30099B41F /* RootTabBarViewController+Design.swift in Sources */,
 				81557CEA2CCA4CF90099B41F /* CommonError.swift in Sources */,
 				81557C982CC91EA00099B41F /* LeaguesViewController.swift in Sources */,
 				81557CC92CC95F0E0099B41F /* LeagueType.swift in Sources */,
 				81557CA22CC9398C0099B41F /* URLBuilder.swift in Sources */,
+				81557D052CCA92D20099B41F /* PlayerServiceProtocol.swift in Sources */,
 				81557CE82CCA4BBC0099B41F /* LeagueError.swift in Sources */,
 				81557CC62CC95E4B0099B41F /* LeaguesViewModel.swift in Sources */,
+				81538C4A2CCAEB290054F59D /* PlayerViewController.swift in Sources */,
+				814827CB2CCACC89007C5C91 /* LiveEventError.swift in Sources */,
+				814827C72CCACC2D007C5C91 /* LiveEventService.swift in Sources */,
 				8189CDFF2CC8E79E00B1BA83 /* AppDelegate.swift in Sources */,
 				81557CF92CCA789B0099B41F /* SearchViewController+Design.swift in Sources */,
+				814827D12CCAD072007C5C91 /* LiveEventTableViewCell.swift in Sources */,
+				814827C42CCACB83007C5C91 /* LiveEventResponse.swift in Sources */,
 				81557CEC2CCA515F0099B41F /* ErrorView.swift in Sources */,
 				81557CBA2CC94BA00099B41F /* LeagueResponse.swift in Sources */,
 				81557CCC2CC984AF0099B41F /* LeaguesViewController+Design.swift in Sources */,
+				81538C4C2CCAEB2F0054F59D /* PlayerViewController+Design.swift in Sources */,
 				81557C9B2CC925080099B41F /* UIColor+Extensions.swift in Sources */,
 				81557CE32CCA3C540099B41F /* TeamRankTableViewCell.swift in Sources */,
 				81557CC02CC955B10099B41F /* LeagueService.swift in Sources */,
+				81557D0F2CCAAE4C0099B41F /* PlayerError.swift in Sources */,
 				81557CF42CCA61D00099B41F /* TeamRankHeaderView+Design.swift in Sources */,
 				81557CA02CC933860099B41F /* LocalizableString.swift in Sources */,
 				81A705412CC8FBA5008FD00F /* HTTPClient.swift in Sources */,
+				81557D0D2CCA9E3C0099B41F /* SearchViewModel.swift in Sources */,
 				81557CD72CCA220E0099B41F /* LeagueStandingsViewController.swift in Sources */,
 				8189CE002CC8E79E00B1BA83 /* SceneDelegate.swift in Sources */,
 				81557C932CC919B40099B41F /* RootTabBarViewController.swift in Sources */,
 				8189CE012CC8E79E00B1BA83 /* HomeViewController.swift in Sources */,
 				81557CF72CCA720F0099B41F /* SearchViewController.swift in Sources */,
+				814827BF2CCAC5E0007C5C91 /* SearchViewController+Keyboard.swift in Sources */,
 				81557CB82CC949DA0099B41F /* League.swift in Sources */,
+				81557D002CCA91D50099B41F /* PlayerResponse.swift in Sources */,
 				81557CC32CC9560A0099B41F /* TeamService.swift in Sources */,
 				81557CE52CCA3D5B0099B41F /* TeamRankTableViewCell+Design.swift in Sources */,
 				81557CD92CCA22210099B41F /* LeagueStandingsViewController+Design.swift in Sources */,
+				81557D022CCA91D90099B41F /* Player.swift in Sources */,
 				81557CAC2CC93C9C0099B41F /* URLBuilderV2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,11 @@ extension RootTabBarViewController: ViewControllerDesignProtocol {
 
     }
 
+    func setAccessibilityIdentifiers() {
+        tabBar.isAccessibilityElement = true
+        tabBar.accessibilityHint = "Tab bar with two tabs"
+    }
+
     private func setupTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()

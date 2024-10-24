@@ -46,7 +46,7 @@ class LeagueStandingsViewModel {
                             self.dispatchGroup.leave()
 
                         case .failure(let error):
-                            print(error)
+                            completion(.failure(error))
                             self.dispatchGroup.leave()
                         }
                     }

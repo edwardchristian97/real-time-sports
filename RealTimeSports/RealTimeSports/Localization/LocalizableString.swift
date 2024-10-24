@@ -18,6 +18,10 @@ enum LocalizableStrings: String {
     case teamsTitle
     case playersTitle
     case eventsTitle
+    case searchPlaceholderTitle
+    case noResultsFound
+    case liveTitle
+    case noLiveEvents
 
     var localized: String {
         String(localized: String.LocalizationValue(rawValue))

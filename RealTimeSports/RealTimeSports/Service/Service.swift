@@ -11,7 +11,9 @@ class Service {
 
     fileprivate(set) var teamService: TeamServiceProtocol!
     fileprivate(set) var leagueService: LeagueServiceProtocol!
-    fileprivate var httpClient: HTTPClient!
+    fileprivate(set) var playerService: PlayerServiceProtocol!
+    fileprivate(set) var liveEventService: LiveEventServiceProtocol!
+    fileprivate(set) var httpClient: HTTPClient!
 
 }
 
@@ -21,12 +23,22 @@ class ServiceFactory {
         let service = Service()
 
         service.httpClient = HTTPClient()
+
         service.teamService = TeamService(
             urlBuilder: CommonURLBuilder(),
             httpClient: service.httpClient)
+
         service.leagueService = LeagueService(
             urlBuilder: URLBuilder(),
             urlBuilderV2: CommonURLBuilder(),
+            httpClient: service.httpClient)
+
+        service.playerService = PlayerService(
+            urlBuilder: CommonURLBuilder(),
+            httpClient: service.httpClient)
+
+        service.liveEventService = LiveEventService(
+            urlBuilder: CommonURLBuilder(),
             httpClient: service.httpClient)
 
         return service

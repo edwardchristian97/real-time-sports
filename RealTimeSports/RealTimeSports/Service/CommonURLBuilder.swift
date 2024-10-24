@@ -12,7 +12,7 @@ class CommonURLBuilder: URLBuilderV2 {
     let playerKey = "player"
     let leagueKey = "league"
     let leaguesKey = "leagues"
-    let livescoreKey = "livescore"
+    let soccerKey = "soccer"
 
     var allURL: URL {
         baseUrl.appendingPathComponent("all")
@@ -32,6 +32,10 @@ class CommonURLBuilder: URLBuilderV2 {
 
     var filterURL: URL {
         baseUrl.appendingPathComponent("filter")
+    }
+
+    var livescoreURL: URL {
+        baseUrl.appendingPathComponent("livescore")
     }
 
 }

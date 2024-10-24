@@ -54,4 +54,15 @@ extension TeamRankTableViewCell: ViewDesignProtocol {
         teamPointsLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
     }
 
+    func setAccessibilityIdentifiers() {
+        teamRankLabel.isAccessibilityElement = true
+        teamRankLabel.accessibilityHint = "Rank of the team"
+
+        teamNameLabel.isAccessibilityElement = true
+        teamNameLabel.accessibilityHint = "Name of the team"
+
+        teamPointsLabel.isAccessibilityElement = true
+        teamPointsLabel.accessibilityHint = "Points of the team"
+    }
+
 }
