@@ -20,7 +20,9 @@ class LeagueStandingsViewModel {
     func fetchLeagueStandings(id: String, completion: @escaping (Result<[Team], LeagueError>) -> Void) {
         var teamsWithImages: [Team] = []
 
-        leaguesService.leagueStandings(id: id) { result in
+        leaguesService.leagueStandings(id: id) { [weak self] result in
+            guard let self else { return }
+
             switch result {
             case .success(let teams):
                 for team in teams {

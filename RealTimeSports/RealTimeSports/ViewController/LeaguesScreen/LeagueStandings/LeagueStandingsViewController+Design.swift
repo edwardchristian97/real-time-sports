@@ -10,6 +10,9 @@ import Lottie
 extension LeagueStandingsViewController: ViewControllerDesignProtocol {
 
     func createViews() {
+        backButton = UIButton()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+
         leagueStandingsTableView = UITableView()
         view.addSubview(leagueStandingsTableView)
 
@@ -21,6 +24,10 @@ extension LeagueStandingsViewController: ViewControllerDesignProtocol {
     }
     
     func styleViews() {
+        backButton.tintColor = .systemBackground
+        backButton.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+
         errorView.backgroundColor = .systemBackground
         errorView.isHidden = true
 

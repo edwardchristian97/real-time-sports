@@ -21,7 +21,7 @@ class LiveEventService: LiveEventServiceProtocol {
         var request = URLRequest(
             url: urlBuilder
                 .livescoreURL
-                .appendingPathComponent(urlBuilder.soccerKey)
+                .appendingPathComponent(urlBuilder.allKey)
         )
 
         request.httpMethod = HTTPMethodType.get.rawValue
@@ -33,7 +33,10 @@ class LiveEventService: LiveEventServiceProtocol {
                 if let data {
                     do {
                         let response = try JSONDecoder().decode(LiveScoreResponse.self, from: data)
-                        completion(.success(response.livescore))
+
+                        // Return only the matches that are live, NS means the game didn't start
+                        let livescore = response.livescore.filter { $0.strProgress != "NS" }
+                        completion(.success(livescore))
                     } catch {
                         completion(.failure(.failureLiveScoreResponseDecoding))
                     }

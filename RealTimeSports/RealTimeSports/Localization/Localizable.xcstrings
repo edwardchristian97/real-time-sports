@@ -103,6 +103,23 @@
         }
       }
     },
+    "noLeaguesFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There are no leagues found"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu s-a gasit nicio liga"
+          }
+        }
+      }
+    },
     "noLiveEvents" : {
       "extractionState" : "manual",
       "localizations" : {

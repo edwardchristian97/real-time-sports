@@ -22,6 +22,7 @@ enum LocalizableStrings: String {
     case noResultsFound
     case liveTitle
     case noLiveEvents
+    case noLeaguesFound
 
     var localized: String {
         String(localized: String.LocalizationValue(rawValue))

@@ -13,6 +13,7 @@ class LeaguesViewController: UIViewController {
     private var leagues: [League] = []
     private let viewModel: LeaguesViewModel = ViewModelFactory.makeLeaguesViewModel()
 
+    var errorView: ErrorView!
     var leaguesTableView: UITableView!
     var loadingAnimation: LottieAnimationView!
 
@@ -36,7 +37,9 @@ class LeaguesViewController: UIViewController {
         loadingAnimation.isHidden = false
         loadingAnimation.play()
 
-        viewModel.fetchAllLeagues { result in
+        viewModel.fetchAllLeagues { [weak self] result in
+            guard let self else { return }
+            
             self.loadingAnimation.isHidden = true
             self.loadingAnimation.stop()
             
@@ -46,7 +49,8 @@ class LeaguesViewController: UIViewController {
                     self.leagues = leagues
                     self.updateTableView()
                 case .failure(let error):
-                    print(error)
+                    self.errorView.setDescriptionLabel(error.userFriendlyDescription)
+                    self.errorView.isHidden = false
                 }
             }
         }

@@ -37,14 +37,14 @@ class LeagueService: LeagueServiceProtocol {
                         let response = try JSONDecoder().decode(LookupLeagueResponse.self, from: data)
                         completion(.success(response.lookup[0]))
                     } catch {
-                        completion(.failure(.commonError(.unexpectedError)))
+                        completion(.failure(.failedDecodingLeague))
                     }
                 } else {
-                    completion(.failure(.commonError(.unexpectedError)))
+                    completion(.failure(.noLeagueFound))
                 }
 
             case .failure(_):
-                completion(.failure(.commonError(.unexpectedError)))
+                completion(.failure(.failedLeagueRequest))
             }
         }
     }
@@ -65,14 +65,14 @@ class LeagueService: LeagueServiceProtocol {
                         let filteredResponse = Array(response.all.prefix(15))
                         completion(.success(filteredResponse))
                     } catch {
-                        completion(.failure(.commonError(.unexpectedError)))
+                        completion(.failure(.failedDecodingAllLeagues))
                     }
                 } else {
-                    completion(.failure(.commonError(.unexpectedError)))
+                    completion(.failure(.noLeaguesFound))
                 }
 
             case .failure(_):
-                completion(.failure(.commonError(.unexpectedError)))
+                completion(.failure(.failedAllLeaguesRequest))
             }
         }
 
@@ -91,14 +91,14 @@ class LeagueService: LeagueServiceProtocol {
                         let response = try JSONDecoder().decode(TableTeamResponse.self, from: data)
                         completion(.success(response.table))
                     } catch {
-                        completion(.failure(.commonError(.unexpectedError)))
+                        completion(.failure(.failedDecodingStandings))
                     }
                 } else {
                     completion(.failure(.noAvailableStandings))
                 }
 
             case .failure(_):
-                completion(.failure(.commonError(.unexpectedError)))
+                completion(.failure(.failedLeagueStandingsRequest))
             }
         }
     }
@@ -106,16 +106,16 @@ class LeagueService: LeagueServiceProtocol {
     func downloadImage(url: URL, completion: @escaping (Result<Data, LeagueError>) -> Void) {
         httpClient.getRequest(url: URLRequest(url: url)) { result in
             switch result {
-                
+
             case .success(let data):
                 if let data {
                     completion(.success(data))
                 } else {
-                    completion(.failure(.commonError(.unexpectedError)))
+                    completion(.failure(.noLeagueImageDataDownloaded))
                 }
 
             case .failure(_):
-                completion(.failure(.commonError(.unexpectedError)))
+                completion(.failure(.failedDownloadingLeagueImage))
             }
         }
     }

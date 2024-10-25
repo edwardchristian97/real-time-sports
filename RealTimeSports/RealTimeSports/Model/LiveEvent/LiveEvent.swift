@@ -15,12 +15,21 @@ struct LiveEvent {
     let progressTime: String
 
     init(from liveEventResponse: LiveEventResponse) {
-        self.league = liveEventResponse.strLeague
-        self.homeTeamName = liveEventResponse.strHomeTeam
-        self.awayTeamName = liveEventResponse.strAwayTeam
-        self.homeTeamScore = liveEventResponse.intHomeScore
-        self.awayTeamScore = liveEventResponse.intAwayScore
-        self.progressTime = liveEventResponse.strProgress
+        self.league = liveEventResponse.strLeague ?? ""
+        self.homeTeamName = liveEventResponse.strHomeTeam ?? ""
+        self.awayTeamName = liveEventResponse.strAwayTeam ?? ""
+        self.homeTeamScore = liveEventResponse.intHomeScore ?? "0"
+        self.awayTeamScore = liveEventResponse.intAwayScore ?? "0"
+
+        if let progressTime = liveEventResponse.strProgress {
+            if let progressTimeInt = Int(progressTime) {
+                self.progressTime = "\(progressTimeInt)'"
+            } else {
+                self.progressTime = progressTime
+            }
+        } else {
+            self.progressTime = ""
+        }
     }
 
 }

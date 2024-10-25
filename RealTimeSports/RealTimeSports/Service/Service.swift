@@ -9,10 +9,10 @@ import Foundation
 
 class Service {
 
-    fileprivate(set) var teamService: TeamServiceProtocol!
     fileprivate(set) var leagueService: LeagueServiceProtocol!
     fileprivate(set) var playerService: PlayerServiceProtocol!
     fileprivate(set) var liveEventService: LiveEventServiceProtocol!
+    fileprivate(set) var userDefaultsService: UserDefaultsServiceProtocol!
     fileprivate(set) var httpClient: HTTPClient!
 
 }
@@ -23,10 +23,6 @@ class ServiceFactory {
         let service = Service()
 
         service.httpClient = HTTPClient()
-
-        service.teamService = TeamService(
-            urlBuilder: CommonURLBuilder(),
-            httpClient: service.httpClient)
 
         service.leagueService = LeagueService(
             urlBuilder: URLBuilder(),
@@ -40,6 +36,8 @@ class ServiceFactory {
         service.liveEventService = LiveEventService(
             urlBuilder: CommonURLBuilder(),
             httpClient: service.httpClient)
+
+        service.userDefaultsService = UserDefaultsService()
 
         return service
     }

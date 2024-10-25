@@ -8,6 +8,7 @@ import Foundation
 
 class CommonURLBuilder: URLBuilderV2 {
 
+    let allKey = "all"
     let teamKey = "team"
     let playerKey = "player"
     let leagueKey = "league"

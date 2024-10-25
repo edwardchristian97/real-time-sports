@@ -9,9 +9,12 @@ import UIKit
 class SearchViewController: UIViewController {
 
     private let viewModel = ViewModelFactory.makeSearchViewModel()
+    private let maxSearches = 3
     private var searchResults: [Player] = []
+    private var searchStack: [String] = []
 
     var searchBar: UISearchBar!
+    var recentSearchesStackView: UIStackView!
     var searchTableView: UITableView!
 
     override func viewDidLoad() {
@@ -21,6 +24,7 @@ class SearchViewController: UIViewController {
         setupKeyboardNotifications()
         setupSearchBar()
         setupTableView()
+        setupRecentSearchesStackView()
     }
 
     deinit {
@@ -35,7 +39,11 @@ extension SearchViewController {
     private func searchPlayers(with searchText: String?) {
         guard let searchText else { return }
 
-        viewModel.searchPlayer(with: searchText) { result in
+        updateSearchStack(searchText)
+
+        viewModel.searchPlayer(with: searchText) { [weak self] result in
+            guard let self else { return }
+            
             DispatchQueue.main.async {
                 switch result {
                 case .success(let players):
@@ -123,6 +131,46 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             searchTableView.deleteRows(at: indexPathsToRemove, with: .fade)
             searchTableView.insertRows(at: indexPathsToInsert, with: .fade)
         }, completion: nil)
+    }
+
+}
+
+// MARK: Recent Searches
+extension SearchViewController {
+
+    func setupRecentSearchesStackView() {
+        searchStack = viewModel.getRecentSearches()
+        updateStackView()
+    }
+
+    private func updateSearchStack(_ searchText: String) {
+        guard !searchStack.contains(searchText) else { return }
+
+        searchStack.append(searchText)
+        viewModel.setRecentSearches(searchStack)
+
+        if searchStack.count > maxSearches {
+            searchStack.removeFirst()
+        }
+
+        updateStackView()
+    }
+
+    private func updateStackView() {
+        recentSearchesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        for searchText in searchStack {
+            let button = UIButton(type: .system)
+            button.setTitle(searchText, for: .normal)
+            button.setTitleColor(.dynamicAppGreen, for: .normal)
+            button.addTarget(self, action: #selector(recentSearchTapped(_:)), for: .touchUpInside)
+            recentSearchesStackView.addArrangedSubview(button)
+        }
+    }
+
+    @objc private func recentSearchTapped(_ sender: UIButton) {
+        guard let searchText = sender.title(for: .normal) else { return }
+        searchPlayers(with: searchText)
     }
 
 }

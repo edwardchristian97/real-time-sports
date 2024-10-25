@@ -11,18 +11,22 @@ class SearchViewModel {
 
     private let dispatchGroup: DispatchGroup
     private let playerService: PlayerServiceProtocol
-    private let teamService: TeamServiceProtocol
+    private let userDefaults: UserDefaultsServiceProtocol
 
-    init(playerService: PlayerServiceProtocol, teamService: TeamServiceProtocol) {
-        self.dispatchGroup = DispatchGroup()
-        self.playerService = playerService
-        self.teamService = teamService
+    init(
+        playerService: PlayerServiceProtocol,
+        userDefaults: UserDefaultsServiceProtocol) {
+            self.dispatchGroup = DispatchGroup()
+            self.playerService = playerService
+            self.userDefaults = userDefaults
     }
 
     func searchPlayer(with name: String, completion: @escaping (Result<[Player], PlayerError>) -> Void) {
         var players: [Player] = []
 
-        playerService.searchPlayer(with: name, completion: { result in
+        playerService.searchPlayer(with: name, completion: { [weak self] result in
+            guard let self else { return }
+
             switch result {
             case .success(let results):
                 for player in results {
@@ -90,6 +94,14 @@ class SearchViewModel {
                 completion(.failure(error))
             }
         })
+    }
+
+    func setRecentSearches(_ recentSearches: [String]) {
+        userDefaults.setRecentSearches(recentSearches, forKey: UserDefaultsService.recentSearchesKey)
+    }
+
+    func getRecentSearches() -> [String] {
+        userDefaults.getRecentSearches(forKey: UserDefaultsService.recentSearchesKey)
     }
 
 }

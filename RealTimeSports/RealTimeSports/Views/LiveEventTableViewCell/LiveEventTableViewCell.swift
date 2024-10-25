@@ -36,7 +36,7 @@ class LiveEventTableViewCell: UITableViewCell {
         awayTeamLabel.text = liveEvent.awayTeamName
         homeTeamScoreLabel.text = liveEvent.homeTeamScore
         awayTeamScoreLabel.text = liveEvent.awayTeamScore
-        progressTimeLabel.text = "\(LocalizableStrings.liveTitle.localized) \(liveEvent.progressTime)'" 
+        progressTimeLabel.text = "\(LocalizableStrings.liveTitle.localized) \(liveEvent.progressTime)" 
     }
 
 }

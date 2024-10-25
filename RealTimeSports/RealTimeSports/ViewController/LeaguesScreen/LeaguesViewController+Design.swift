@@ -16,9 +16,15 @@ extension LeaguesViewController: ViewControllerDesignProtocol {
 
         loadingAnimation = LottieAnimationView()
         view.addSubview(loadingAnimation)
+
+        errorView = ErrorView()
+        view.addSubview(errorView)
     }
 
     func styleViews() {
+        errorView.backgroundColor = .systemBackground
+        errorView.isHidden = true
+
         setupNavigationBarAppearance()
 
         loadingAnimation.animation = LottieAnimation.named("loading-animation")
@@ -29,6 +35,8 @@ extension LeaguesViewController: ViewControllerDesignProtocol {
     }
 
     func setConstraintsForViews() {
+        errorView.autoPinEdgesToSuperviewEdges()
+        
         leaguesTableView.rowHeight = 80
         leaguesTableView.autoPinEdgesToSuperviewEdges()
 

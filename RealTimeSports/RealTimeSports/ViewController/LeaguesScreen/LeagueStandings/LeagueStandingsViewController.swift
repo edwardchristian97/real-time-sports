@@ -17,6 +17,7 @@ class LeagueStandingsViewController: UIViewController {
     var errorView: ErrorView!
     var leagueStandingsTableView: UITableView!
     var loadingAnimation: LottieAnimationView!
+    var backButton: UIButton!
 
     init(leagueId: String) {
         self.leagueId = leagueId
@@ -35,11 +36,22 @@ class LeagueStandingsViewController: UIViewController {
         fetchLeagueStandings()
     }
 
+}
+
+// MARK: Actions
+extension LeagueStandingsViewController {
+
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+
     private func fetchLeagueStandings() {
         loadingAnimation.isHidden = false
         loadingAnimation.play()
 
-        viewModel.fetchLeagueStandings(id: leagueId) { result in
+        viewModel.fetchLeagueStandings(id: leagueId) { [weak self] result in
+            guard let self else { return }
+
             self.loadingAnimation.isHidden = true
             self.loadingAnimation.stop()
 

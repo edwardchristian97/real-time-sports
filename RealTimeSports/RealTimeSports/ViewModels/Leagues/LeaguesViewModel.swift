@@ -21,9 +21,12 @@ class LeaguesViewModel {
     func fetchAllLeagues(completion: @escaping (Result<[League], LeagueError>) -> Void) {
         var leaguesWithImage = [League]()
 
-        leaguesService.allLeagues { result in
+        leaguesService.allLeagues { [weak self] result in
+            guard let self else { return }
+            
             switch result {
             case .success(let leagues):
+
                 let filteredLeague = self.filterLeagues(leagues, by: .football)
 
                 for league in filteredLeague {

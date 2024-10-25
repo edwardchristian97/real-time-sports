@@ -11,7 +11,17 @@ enum LeagueError: Error {
 
     case commonError(CommonError)
     case noAvailableStandings
-    
+    case noLeaguesFound
+    case noLeagueFound
+    case failedDecodingAllLeagues
+    case failedDecodingStandings
+    case failedDecodingLeague
+    case failedAllLeaguesRequest
+    case failedLeagueRequest
+    case failedLeagueStandingsRequest
+    case noLeagueImageDataDownloaded
+    case failedDownloadingLeagueImage
+
 }
 
 extension LeagueError: LocalizedError {
@@ -22,6 +32,10 @@ extension LeagueError: LocalizedError {
             return error.userFriendlyDescription
         case .noAvailableStandings:
             return LocalizableStrings.noAvailableStandings.localized
+        case .noLeaguesFound:
+            return LocalizableStrings.noLeaguesFound.localized
+        default:
+            return LocalizableStrings.unexpectedError.localized
         }
     }
 

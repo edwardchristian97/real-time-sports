@@ -22,7 +22,9 @@ class ViewModelFactory {
     }
 
     static func makeSearchViewModel() -> SearchViewModel {
-        SearchViewModel(playerService: service.playerService, teamService: service.teamService)
+        SearchViewModel(
+            playerService: service.playerService,
+            userDefaults: service.userDefaultsService)
     }
 
     static func makeLiveEventViewModel() -> LiveEventViewModel {
