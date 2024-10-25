@@ -17,7 +17,9 @@ class HomeViewController: UIViewController {
     var searchButton: UIButton!
     var liveEventsTableView: UITableView!
 
-    var liveEvents: [LiveEvent] = []
+    private var liveEvents: [LiveEvent] = []
+    private var eventsByLeague: [String: [LiveEvent]] = [:]
+    private var leagues: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,22 @@ extension HomeViewController {
             switch result {
             case .success(let liveEvents):
                 self.liveEvents = liveEvents
+                self.groupEventsByLeague()
                 self.liveEventsTableView.reloadData()
             case .failure(let error):
                 self.errorView.setDescriptionLabel(error.userFriendlyDescription)
                 self.errorView.isHidden = false
+            }
+        }
+    }
+
+    private func groupEventsByLeague() {
+        for event in liveEvents {
+            if eventsByLeague[event.league] != nil {
+                eventsByLeague[event.league]?.append(event)
+            } else {
+                eventsByLeague[event.league] = [event]
+                leagues.append(event.league)
             }
         }
     }
@@ -80,22 +94,33 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         liveEventsTableView.register(LiveEventTableViewCell.self, forCellReuseIdentifier: LiveEventTableViewCell.cellIdentifier)
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        leagues.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        liveEvents.count
+        let league = leagues[section]
+        return eventsByLeague[league]?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: LiveEventTableViewCell.cellIdentifier,
             for: indexPath) as! LiveEventTableViewCell
-        let liveEvent = liveEvents[indexPath.row]
+        let league = leagues[indexPath.section]
+
+        guard let liveEvent = eventsByLeague[league]?[indexPath.row] else {
+            return UITableViewCell()
+        }
+
         cell.set(liveEvent: liveEvent)
         cell.selectionStyle = .none
 
         return cell
     }
 
-
-
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        leagues[section]
+    }
 
 }

@@ -147,11 +147,12 @@ extension SearchViewController {
         guard !searchStack.contains(searchText) else { return }
 
         searchStack.append(searchText)
-        viewModel.setRecentSearches(searchStack)
 
         if searchStack.count > maxSearches {
             searchStack.removeFirst()
         }
+
+        viewModel.setRecentSearches(searchStack)
 
         updateStackView()
     }
