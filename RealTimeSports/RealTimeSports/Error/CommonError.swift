@@ -10,6 +10,7 @@ enum CommonError: Error {
 
     case noInternetConnection
     case unexpectedError
+    
 }
 
 extension CommonError: LocalizedError {

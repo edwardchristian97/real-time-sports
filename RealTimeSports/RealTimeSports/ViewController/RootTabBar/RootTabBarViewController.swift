@@ -38,5 +38,6 @@ class RootTabBarViewController: UITabBarController {
             navigationController.tabBarItem.image = icon
 
             return navigationController
-        }
+    }
+
 }

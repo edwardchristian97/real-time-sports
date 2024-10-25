@@ -21,6 +21,11 @@ class SearchViewModel {
             self.userDefaults = userDefaults
     }
 
+}
+
+// MARK: Actions
+extension SearchViewModel {
+
     func searchPlayer(with name: String, completion: @escaping (Result<[Player], PlayerError>) -> Void) {
         var players: [Player] = []
 

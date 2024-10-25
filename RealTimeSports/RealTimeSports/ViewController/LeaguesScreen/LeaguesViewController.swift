@@ -33,16 +33,21 @@ class LeaguesViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: Actions
+extension LeaguesViewController {
+
     private func fetchAllLeagues() {
         loadingAnimation.isHidden = false
         loadingAnimation.play()
 
         viewModel.fetchAllLeagues { [weak self] result in
             guard let self else { return }
-            
+
             self.loadingAnimation.isHidden = true
             self.loadingAnimation.stop()
-            
+
             DispatchQueue.main.async {
                 switch result {
                 case .success(let leagues):

@@ -30,11 +30,6 @@ class HomeViewController: UIViewController {
         startRequestInterval()
     }
 
-    @objc func searchButtonTapped() {
-        let searchViewController = SearchViewController()
-        present(searchViewController, animated: true)
-    }
-
     deinit {
         stopRequestInterval()
     }
@@ -43,6 +38,11 @@ class HomeViewController: UIViewController {
 
 // MARK: Actions
 extension HomeViewController {
+
+    @objc func searchButtonTapped() {
+        let searchViewController = SearchViewController()
+        present(searchViewController, animated: true)
+    }
 
     private func startRequestInterval() {
         timer = Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true) { [weak self] _ in

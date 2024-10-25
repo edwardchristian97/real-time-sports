@@ -46,7 +46,6 @@ class LiveEventService: LiveEventServiceProtocol {
             case .failure(_):
                 completion(.failure(.failedFetchingLiveScoreData))
             }
-
         }
     }
 

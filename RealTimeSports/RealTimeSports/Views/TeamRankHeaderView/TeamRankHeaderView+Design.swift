@@ -58,4 +58,5 @@ extension TeamRankHeaderView: ViewDesignProtocol {
         teamPointsLabel.isAccessibilityElement = true
         teamPointsLabel.accessibilityHint = "Points of the team"
     }
+
 }
