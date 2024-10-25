@@ -188,13 +188,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search…"
+            "value" : "Search player…"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cauta..."
+            "value" : "Cauta un jucator…"
           }
         }
       }
